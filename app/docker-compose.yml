@@ -7,7 +7,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - flask_fundamentos_mysql:/var/lib/mysql/data
+      - flask_fundamentos_mysql:/var/lib/mysql
     networks:
       - flask_fundamentos
   app:
