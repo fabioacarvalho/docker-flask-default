@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: flask_fundamentos
+    ports:
+      - 3306:3306
+    volumes:
+      - flask_fundamentos_mysql:/var/lib/mysql/data
+    networks:
+      - flask_fundamentos
+  app:
+    build: 
+      context: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:5000"
+    command: flask run --host=0.0.0.0 --port=5000 --reload
+    networks:
+      - flask_fundamentos
+    depends_on:
+      - db
+
+volumes:
+  flask_fundamentos_mysql:
+
+networks:
+  flask_fundamentos:
+    driver: bridge

@@ -1,0 +1,16 @@
+.
+├── Dockerfile
+├── __init__.py
+├── app.py
+├── docker-compose.yml
+├── estrutura_projeto.txt
+├── models
+│   └── __init__.py
+├── requirements.txt
+├── templates
+│   └── __init__.py
+└── views
+    ├── __init__.py
+    └── cliente_view.py
+
+4 directories, 10 files
